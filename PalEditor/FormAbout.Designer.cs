@@ -70,14 +70,14 @@
             this.label2.Location = new System.Drawing.Point(64, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
-            this.label2.Text = "v0.5";
+            this.label2.Text = "M8专用版";
             // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(64, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
-            this.label3.Text = "2009.05.29";
+            this.label3.Text = "2009.05.20";
             // 
             // label4
             // 

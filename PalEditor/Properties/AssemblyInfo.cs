@@ -1,18 +1,17 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PalEditor")]
-[assembly: AssemblyDescription("仙剑奇侠传 存档修改器")]
+[assembly: AssemblyTitle("PalEditor for M8")]
+[assembly: AssemblyDescription("仙剑奇侠传 存档修改器 for M8")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("jason (jsfaint@gmail.com)")]
 [assembly: AssemblyProduct("PalEditor")]
-[assembly: AssemblyCopyright("copyright 2009")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("jason CopyRight 2009")]
+[assembly: AssemblyTrademark("PalEditorM8")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -30,9 +29,8 @@ using System.Resources;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.5.0.0")]
+[assembly: AssemblyVersion("0.4.0.0")]
 
 // Below attribute is to suppress FxCop warning "CA2232 : Microsoft.Usage : Add STAThreadAttribute to assembly"
 // as Device app does not support STA thread.
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2232:MarkWindowsFormsEntryPointsWithStaThread")]
-[assembly: NeutralResourcesLanguageAttribute("zh-CN")]

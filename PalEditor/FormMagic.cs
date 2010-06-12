@@ -34,73 +34,40 @@ namespace PalEditor
             palMagic.ArrayToDisplay(pIndex);
 
             checkBoxMagic = new CheckBox[Magic_CNT];
+
             this.AutoScaleMode = AutoScaleMode.None;
 
-
-            if (this.Width >= 480)
+            for (int ii = 0; ii < Magic_CNT; ii++)
             {
-                int top = 30;
-                int space = 20;
-                for (int ii = 0; ii < Magic_CNT; ii++)
+                checkBoxMagic[ii] = new CheckBox();
+                checkBoxMagic[ii].Font = new Font("Tahoma", 15, FontStyle.Regular);
+                checkBoxMagic[ii].Text = palMagic.magicList[ii].MagicDesc;
+                checkBoxMagic[ii].Checked = palMagic.magicList[ii].Enabled;
+                checkBoxMagic[ii].Width = 120;
+                checkBoxMagic[ii].Height = 30;
+                switch (ii % 3)
                 {
-                    checkBoxMagic[ii] = new CheckBox();
-                    checkBoxMagic[ii].Font = new Font("Tahoma", 8, FontStyle.Regular);
-                    checkBoxMagic[ii].Text = palMagic.magicList[ii].MagicDesc;
-                    checkBoxMagic[ii].Checked = palMagic.magicList[ii].Enabled;
-                    checkBoxMagic[ii].Width = 150;
-                    checkBoxMagic[ii].Height = 32;
+                    case 0:
+                        checkBoxMagic[ii].Left = 20;
+                        checkBoxMagic[ii].Top = 40 + (ii / 3) * checkBoxMagic[ii].Height;
+                        break;
+                    case 1:
+                        checkBoxMagic[ii].Left = 170;
+                        checkBoxMagic[ii].Top = 40 + (ii / 3) * checkBoxMagic[ii].Height;
+                        break;
 
-                    switch (ii % 3)
-                    {
-                        case 0:
-                            checkBoxMagic[ii].Left = 5;
-                            checkBoxMagic[ii].Top = top + (ii / 3) * checkBoxMagic[ii].Height + space;
-                            break;
-                        case 1:
-                            checkBoxMagic[ii].Left = 155;
-                            checkBoxMagic[ii].Top = top + ((ii - 1) / 3) * checkBoxMagic[ii].Height + space;
-                            break;
-
-                        case 2:
-                            checkBoxMagic[ii].Left = 305;
-                            checkBoxMagic[ii].Top = top + ((ii - 2) / 3) * checkBoxMagic[ii].Height + space;
-                            break;
-                    }
-
-                    this.Controls.Add(checkBoxMagic[ii]);
-                    checkBoxMagic[ii].CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
-
-                    if (palMagic.magicList[ii].Enabled)
-                        this.mCount++;
+                    case 2:
+                        checkBoxMagic[ii].Left = 320;
+                        checkBoxMagic[ii].Top = 40 + (ii / 3) * checkBoxMagic[ii].Height;
+                        break;
                 }
-            }
-            else if (this.Width < 480)
-            {
-                int top = 20;
 
-                for (int ii = 0; ii < Magic_CNT; ii++)
-                {
-                    checkBoxMagic[ii] = new CheckBox();
-                    checkBoxMagic[ii].Font = new Font("Tahoma", 8, FontStyle.Regular);
-                    checkBoxMagic[ii].Text = palMagic.magicList[ii].MagicDesc;
-                    checkBoxMagic[ii].Checked = palMagic.magicList[ii].Enabled;
 
-                    if (ii % 2 == 0)
-                    {
-                        checkBoxMagic[ii].Left = 5;
-                        checkBoxMagic[ii].Top = top + (ii + 1) / 2 * checkBoxMagic[ii].Height;
-                    }
-                    else
-                    {
-                        checkBoxMagic[ii].Left = 110;
-                        checkBoxMagic[ii].Top = top + ii / 2 * checkBoxMagic[ii].Height;
-                    }
-                    this.Controls.Add(checkBoxMagic[ii]);
-                    checkBoxMagic[ii].CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
+                this.Controls.Add(checkBoxMagic[ii]);
+                checkBoxMagic[ii].CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
 
-                    if (palMagic.magicList[ii].Enabled)
-                        this.mCount++;
-                }
+                if (palMagic.magicList[ii].Enabled)
+                    this.mCount++;
             }
 
             labelMagic.Text = "每人最多拥有32项仙术, 已有 " + mCount + " 项";

@@ -52,16 +52,17 @@
             // 
             // labelMagic
             // 
+            this.labelMagic.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular);
             this.labelMagic.Location = new System.Drawing.Point(0, 0);
             this.labelMagic.Name = "labelMagic";
-            this.labelMagic.Size = new System.Drawing.Size(240, 20);
+            this.labelMagic.Size = new System.Drawing.Size(451, 41);
             // 
             // FormMagic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(480, 268);
+            this.ClientSize = new System.Drawing.Size(480, 640);
             this.ControlBox = false;
             this.Controls.Add(this.labelMagic);
             this.Menu = this.mainMenu1;
