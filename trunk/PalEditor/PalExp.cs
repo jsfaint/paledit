@@ -3,7 +3,7 @@
  * User: jason(jsfaint@gmail.com)
  * Date: 2009-4-22
  * Time: 11:19
- * 
+ *
  */
 
 using System;
@@ -28,7 +28,7 @@ namespace PalEditor
         private uint defence_offset;
         private uint speed_offset;
         private uint luck_offset;
-                
+
         //variable
         public uint exp; //经验
         public uint rank;
@@ -60,7 +60,7 @@ namespace PalEditor
             speed_offset    = offset[9];
             luck_offset     = offset[10];
         }
-        
+
         public void LoadPalExp(System.IO.FileStream fStream)
         {
             try {
@@ -86,9 +86,9 @@ namespace PalEditor
                 System.Console.WriteLine("Exception in PalExp.LoadPalExp(): " + e.Message);
                 System.Windows.Forms.MessageBox.Show("Exception in PalExp.LoadPalExp(): " + e.Message);
             }
-            
+
         }
-        
+
         public void SavePalExp(System.IO.FileStream fStream)
         {
             try
@@ -99,10 +99,10 @@ namespace PalEditor
                 fStream.Write(expTmp, 0, expTmp.Length); //exp
                 fStream.Write(rankTmp, 0, rankTmp.Length); // exp rest
 
-                Saveushort(fStream, now_rank_offset, this.now_rank); 
-                Saveushort(fStream, MaxHP_offset, this.maxHP);      
-                Saveushort(fStream, MaxMP_offset, this.maxMP);      
-                Saveushort(fStream, HP_offset, this.hp);            
+                Saveushort(fStream, now_rank_offset, this.now_rank);
+                Saveushort(fStream, MaxHP_offset, this.maxHP);
+                Saveushort(fStream, MaxMP_offset, this.maxMP);
+                Saveushort(fStream, HP_offset, this.hp);
                 Saveushort(fStream, MP_offset, this.mp);
                 Saveushort(fStream, power_offset, this.power);
                 Saveushort(fStream, wakan_offset, this.wakan);
